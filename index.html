@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Online Store Front</title>
+</head>
+<body>
+    <div id="home" style="display:none"> <!--this is set to display "NONE so it is hidden at first-->
+        <button type="button" id="btnSearch" onclick="showHome()">Home Page</button>
+        Search<input id="search" onchange="searchTextChanged(this)">
+        <button type="button" id="btnSearch" onclick="search()">Search Now</button>
+        <button type="button" id="btnCart" onclick="showCart()">Cart</button>
+        <div id="main"></div><!---this is basically the home page display-->
+        <button style="display: none" type="button" id="btnAddToCart" onclick="addToCart(state.currentProductToAdd)">Add to Cart!</button>
+    </div>
+    <div id="signup">
+        <h1>Welcome to Honest Joe Willie's shop!</h1>
+        <h3>...we got things.</h3>
+        <h2>Sign up for FREE to become a member!</h2>
+        Your Email<input id="email"> <br>
+        Top Secret Password! <input id="password"> <br>
+        <button type="button" id="btnSignUp" onclick="signUp()">Click me.</button>
+    </div>
+</body>
+</html>
