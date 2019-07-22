@@ -42,7 +42,7 @@ window.onload = function(){
 //assinging values to some null varialbes
 addCartButton = document.getElementById("btnAddToCart");
 txtEmail = document.getElementById("email");
-txtPassword = documnet.getElementById("password");
+txtPassword = document.getElementById("password");
 btnSignUp = document.getElementById("btnSignUp");
 btnSignUp.onclick = signUp;
 listProducts(products); //lists products on home page
@@ -50,13 +50,16 @@ getProducts(); //gets products from the server
 
 }
 function signUp(){
-    let email = txt.Email.value;
-    let password = txt.Password.value;
+    let email = txtEmail.value;
+    let password = txtPassword.value;
     home.style.display = "block"; //this makes the home page visible
     signup.style.display = "none"; //this hids the sign-in page
 }
 function searchTextChanged(event){
     state.searchText = event.value; //when someone starts to type in the search bar "event is just that"
+}
+function search(){
+    let filteredProducts = products.filter(p=>p.name.indexOf(state.searchText) >1);
     listProducts(filteredProducts); //just show products that match to the text being typed
 }
 function showProductDetail(id){
@@ -68,8 +71,8 @@ function showProductDetail(id){
 //this will show the products on the home page and when you click on the text it will activate the detail funciton 
 //the .join is used to put the json into a string 
 function listProducts(products){
-    let proDivs = products.map(p=>{
-        return '<hr><div onclick="showProductDetails(${p.id})">${p.name}</div>'
+    let prodDivs = products.map(p=>{
+        return `<hr><div id="item" onclick="showProductDetail(${p.id})">${p.name} <br> -${p.description}</div>`
     });
     mainDiv.innerHTML = prodDivs.join("");
 }
