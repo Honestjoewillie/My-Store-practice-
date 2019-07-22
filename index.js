@@ -74,7 +74,7 @@ function listProducts(products){
     mainDiv.innerHTML = prodDivs.join("");
 }
 //add a product to the cart and then return to the home screen(full product list)
-functionaddToCart(prod){
+function addToCart(prod){
     cart.push(prod);
     showHome();
 }
